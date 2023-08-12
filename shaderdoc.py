@@ -4,10 +4,19 @@ import json
 import argparse
 from typing import TypedDict, List
 from io import TextIOWrapper
+import re
 import os
 
 omitted_example = ['$flags', '$flags_defined', '$flags2', '$flags_defined2']
 omitted = ['$flags_defined', '$flags_defined2']
+
+# Internal shaders that shouldn't be documented
+omitted_shaders = [
+    'blurfilter.*', 'bufferclearobeystencil.*', 'debug.*',
+    'depthwrite', 'downsample.*', 'fillrate', 'panorama.*',
+    'particlesphere.*', 'writestencil.*', 'writez', 'showz',
+    'yuvtorgb'
+]
 
 class ShaderParamType(TypedDict):
     name: str
@@ -49,6 +58,7 @@ class Shader:
         
 
     def emit_docs(self, stream: TextIOWrapper) -> None:
+        stream.write(f'---\nlayout: default\ntitle: {self.name}\nparent: Shaders\n---\n\n')
         stream.write(f'# {self.name}\n\n## Parameters\n\n')
         self._emit_params(stream)
         stream.write('## Example\n\n')
@@ -73,6 +83,9 @@ if __name__ == '__main__':
 
     shaders = []
     for s in j:
+        if any([re.match(x, s['name'].lower()) for x in omitted_shaders]):
+            print(f'Skipping {s["name"]}')
+            continue
         shader = Shader(s)
         with open(f'{args.o}/{shader.name}.md', 'w') as fp:
             shader.emit_docs(fp)
