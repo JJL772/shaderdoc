@@ -1,0 +1,21 @@
+
+on:
+  push:
+
+jobs:
+  generate:
+    name: Generate Markdown
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Generate Markdown
+        run: python3 shaderdoc.py -i manifests/shaders.json -o build
+      - name: Upload Docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: shaders
+          path: build/*.md
+
