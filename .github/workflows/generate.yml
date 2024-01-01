@@ -1,6 +1,8 @@
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   generate:
@@ -12,10 +14,30 @@ jobs:
         with:
           python-version: '3.11'
       - name: Generate Markdown
-        run: python3 shaderdoc.py -i manifests/shaders.json -o build
+        run: |
+          python3 shaderdoc.py -i manifests/shaders.json -o build
+          cd build
+          zip -r ../shaders.zip ./*.md
       - name: Upload Docs
         uses: actions/upload-artifact@v3
         with:
           name: shaders
           path: build/*.md
-
+      - name: Automatic Release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          release_name: Strata Source Shaders - ${{ github.event.repository.updated_at }}
+          tag_name: ${{ github.ref }}
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Upload Docs
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: shaders.zip
+          asset_name: shaders.zip
+          asset_content_type: application/zip

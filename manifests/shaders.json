@@ -7760,42 +7760,6 @@
 			"desc": "Envmap that is consistent across all surfaces",
 			"type": "texture",
 			"default": "paint/paint_envmap_hdr"
-		},
-		{
-			"name": "$DETAIL",
-			"desc": "Detail texture",
-			"type": "texture",
-			"default": "shadertest/detail"
-		},
-		{
-			"name": "$DETAILFRAME",
-			"desc": "Frame number for the detail texture",
-			"type": "int",
-			"default": "0"
-		},
-		{
-			"name": "$DETAILTRANSFORM",
-			"desc": "Detail texture transform",
-			"type": "matrix",
-			"default": "center .5 .5 scale 1 1 rotate 0 translate 0 0"
-		},
-		{
-			"name": "$DETAILBLENDMODE",
-			"desc": "Blend mode for combining detail texture with base. 0=normal, 1= additive, 2=alpha blend detail over base, 3=crossfade",
-			"type": "int",
-			"default": "0"
-		},
-		{
-			"name": "$DETAILBLENDFACTOR",
-			"desc": "Blend amount for detail texture",
-			"type": "float",
-			"default": "1"
-		},
-		{
-			"name": "$DETAILTINT",
-			"desc": "Detail texture tint",
-			"type": "color",
-			"default": "[1 1 1]"
 		}
 	]
 	},
@@ -10832,6 +10796,12 @@
 			"desc": "",
 			"type": "float",
 			"default": "1"
+		},
+		{
+			"name": "$HDRCOLORSCALE",
+			"desc": "hdr color scale",
+			"type": "float",
+			"default": "1.0"
 		}
 	]
 	},
@@ -12344,6 +12314,42 @@
 			"desc": "",
 			"type": "bool",
 			"default": "0"
+		},
+		{
+			"name": "$MOONDOME",
+			"desc": "",
+			"type": "bool",
+			"default": "0"
+		},
+		{
+			"name": "$CUBEPARALLAX",
+			"desc": "",
+			"type": "float",
+			"default": "0.0"
+		},
+		{
+			"name": "$TEXTUREPREVIEW",
+			"desc": "",
+			"type": "bool",
+			"default": "0"
+		},
+		{
+			"name": "$TEXTUREPREVIEW_HIDEALPHA",
+			"desc": "",
+			"type": "float",
+			"default": "0"
+		},
+		{
+			"name": "$TEXTUREPREVIEW_SCALEX",
+			"desc": "",
+			"type": "float",
+			"default": "1"
+		},
+		{
+			"name": "$TEXTUREPREVIEW_SCALEY",
+			"desc": "",
+			"type": "float",
+			"default": "1"
 		}
 	]
 	},
