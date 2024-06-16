@@ -1644,6 +1644,90 @@
 	]
 	},
 	{
+	"name": "DebugMorphAccumulator",
+	"params":[
+
+		{
+			"name": "$flags",
+			"desc": "flags",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags_defined",
+			"desc": "flags_defined",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags2",
+			"desc": "flags2",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags_defined2",
+			"desc": "flags2_defined",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$color",
+			"desc": "color",
+			"type": "color",
+			"default": "[1 1 1]"
+		},
+		{
+			"name": "$alpha",
+			"desc": "alpha",
+			"type": "float",
+			"default": "1.0"
+		},
+		{
+			"name": "$basetexture",
+			"desc": "Base Texture with lighting built in",
+			"type": "texture",
+			"default": "shadertest/BaseTexture"
+		},
+		{
+			"name": "$frame",
+			"desc": "Animation Frame",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$basetexturetransform",
+			"desc": "Base Texture Texcoord Transform",
+			"type": "matrix",
+			"default": "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+		},
+		{
+			"name": "$flashlighttexture",
+			"desc": "flashlight spotlight shape texture",
+			"type": "texture",
+			"default": "effects/flashlight001"
+		},
+		{
+			"name": "$flashlighttextureframe",
+			"desc": "Animation Frame for $flashlight",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$color2",
+			"desc": "color2",
+			"type": "color",
+			"default": "[1 1 1]"
+		},
+		{
+			"name": "$srgbtint",
+			"desc": "tint value to be applied when running on new-style srgb parts",
+			"type": "color",
+			"default": "[1 1 1]"
+		}
+	]
+	},
+	{
 	"name": "DebugNormalMap",
 	"params":[
 
@@ -6114,6 +6198,174 @@
 	]
 	},
 	{
+	"name": "MorphWeight",
+	"params":[
+
+		{
+			"name": "$flags",
+			"desc": "flags",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags_defined",
+			"desc": "flags_defined",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags2",
+			"desc": "flags2",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags_defined2",
+			"desc": "flags2_defined",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$color",
+			"desc": "color",
+			"type": "color",
+			"default": "[1 1 1]"
+		},
+		{
+			"name": "$alpha",
+			"desc": "alpha",
+			"type": "float",
+			"default": "1.0"
+		},
+		{
+			"name": "$basetexture",
+			"desc": "Base Texture with lighting built in",
+			"type": "texture",
+			"default": "shadertest/BaseTexture"
+		},
+		{
+			"name": "$frame",
+			"desc": "Animation Frame",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$basetexturetransform",
+			"desc": "Base Texture Texcoord Transform",
+			"type": "matrix",
+			"default": "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+		},
+		{
+			"name": "$flashlighttexture",
+			"desc": "flashlight spotlight shape texture",
+			"type": "texture",
+			"default": "effects/flashlight001"
+		},
+		{
+			"name": "$flashlighttextureframe",
+			"desc": "Animation Frame for $flashlight",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$color2",
+			"desc": "color2",
+			"type": "color",
+			"default": "[1 1 1]"
+		},
+		{
+			"name": "$srgbtint",
+			"desc": "tint value to be applied when running on new-style srgb parts",
+			"type": "color",
+			"default": "[1 1 1]"
+		}
+	]
+	},
+	{
+	"name": "MorphWeight_DX9",
+	"params":[
+
+		{
+			"name": "$flags",
+			"desc": "flags",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags_defined",
+			"desc": "flags_defined",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags2",
+			"desc": "flags2",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$flags_defined2",
+			"desc": "flags2_defined",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$color",
+			"desc": "color",
+			"type": "color",
+			"default": "[1 1 1]"
+		},
+		{
+			"name": "$alpha",
+			"desc": "alpha",
+			"type": "float",
+			"default": "1.0"
+		},
+		{
+			"name": "$basetexture",
+			"desc": "Base Texture with lighting built in",
+			"type": "texture",
+			"default": "shadertest/BaseTexture"
+		},
+		{
+			"name": "$frame",
+			"desc": "Animation Frame",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$basetexturetransform",
+			"desc": "Base Texture Texcoord Transform",
+			"type": "matrix",
+			"default": "center .5 .5 scale 1 1 rotate 0 translate 0 0"
+		},
+		{
+			"name": "$flashlighttexture",
+			"desc": "flashlight spotlight shape texture",
+			"type": "texture",
+			"default": "effects/flashlight001"
+		},
+		{
+			"name": "$flashlighttextureframe",
+			"desc": "Animation Frame for $flashlight",
+			"type": "int",
+			"default": "0"
+		},
+		{
+			"name": "$color2",
+			"desc": "color2",
+			"type": "color",
+			"default": "[1 1 1]"
+		},
+		{
+			"name": "$srgbtint",
+			"desc": "tint value to be applied when running on new-style srgb parts",
+			"type": "color",
+			"default": "[1 1 1]"
+		}
+	]
+	},
+	{
 	"name": "MotionBlur",
 	"params":[
 
@@ -6575,13 +6827,13 @@
 		},
 		{
 			"name": "$color",
-			"desc": "unused",
+			"desc": "color",
 			"type": "color",
-			"default": "{255 255 255}"
+			"default": "[1 1 1]"
 		},
 		{
 			"name": "$alpha",
-			"desc": "unused",
+			"desc": "alpha",
 			"type": "float",
 			"default": "1.0"
 		},
@@ -6626,6 +6878,12 @@
 			"desc": "tint value to be applied when running on new-style srgb parts",
 			"type": "color",
 			"default": "[1 1 1]"
+		},
+		{
+			"name": "$USECOLOR",
+			"desc": "Allows the material to control a solid color and alpha to pass to the shader.",
+			"type": "bool",
+			"default": "0"
 		},
 		{
 			"name": "$BACKSURFACE",
@@ -11125,7 +11383,7 @@
 			"name": "$DEPTHBLENDSCALE",
 			"desc": "Amplify or reduce DEPTHBLEND fading. Lower values make harder edges.",
 			"type": "float",
-			"default": "50.0"
+			"default": "5.0"
 		},
 		{
 			"name": "$INVERSEDEPTHBLEND",
